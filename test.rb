@@ -1,4 +1,5 @@
 require 'capybara/rspec/matchers'; 
+require 'capybara';
 
 include Capybara::RSpecMatchers
 include Capybara
