@@ -1,5 +1,6 @@
-require 'capybara/rspec/matchers'; 
+require 'capybara/rspec/matchers';
 require 'capybara';
+require 'cucumber/ast/table';
 
 include Capybara::RSpecMatchers
 include Capybara
@@ -12,5 +13,8 @@ node = Capybara.string <<-HTML
       </div>
 HTML
 
-row_value = 'It’s just an idea'
-node.have_css('dd', text: /#{row_value}/i)
+table=Cucumber::Ast::Table.initialize([['a', 'It’s just an idea']])
+table.hashes.each do |row|
+  puts row['Value']
+  nodetest.has_css?('dd', text: /#{row['Value']}/i)
+end
