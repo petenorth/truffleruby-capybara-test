@@ -1,6 +1,7 @@
 require 'capybara/rspec/matchers'; 
 
 include Capybara::RSpecMatchers
+include Capybara
 
 node = Capybara.string <<-HTML
      <div id="uk-telephone-number" class="govuk-summary-list__row uk-telephone-number">
