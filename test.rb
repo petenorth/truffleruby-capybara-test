@@ -1,5 +1,6 @@
 require 'capybara/rspec/matchers';
 require 'capybara';
+require 'cucumber/core/ast/data_table';
 require 'cucumber/multiline_argument/data_table';
 
 include Capybara::RSpecMatchers
