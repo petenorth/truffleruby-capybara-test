@@ -6,15 +6,9 @@ include Capybara
 
 node = Capybara.string <<-HTML
      <div id="uk-telephone-number" class="govuk-summary-list__row uk-telephone-number">
-        <dt class="govuk-summary-list__key">
-          UK telephone number
-        </dt>
         <dd class="govuk-summary-list__value">
-          07123 456789
+           Itâ€™s just an idea
         </dd>
-          <dd class="govuk-summary-list__actions">
-            
-          </dd>
       </div>
 HTML
 
