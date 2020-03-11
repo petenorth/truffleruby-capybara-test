@@ -17,4 +17,5 @@ jobs:
     - run: sudo apt-get update
     - run: sudo apt-get install libsqlite3-dev libxml2-dev libxslt-dev
     - run: gem install 'capybara'
+    - run: gem install 'cucumber'
     - run: ruby test.rb
