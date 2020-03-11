@@ -1,3 +1,4 @@
 require 'capybara/rspec/matchers'; 
 
-have_css('dd', text: /#{row['Value']}/i)
+row_value = 'hello'
+have_css('dd', text: /#{row_value}/i)
