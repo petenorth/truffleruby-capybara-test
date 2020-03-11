@@ -1,6 +1,6 @@
 require 'capybara/rspec/matchers';
 require 'capybara';
-require 'cucumber/ast/table';
+require 'cucumber/multiline_argument/data_table';
 
 include Capybara::RSpecMatchers
 include Capybara
@@ -13,8 +13,18 @@ node = Capybara.string <<-HTML
       </div>
 HTML
 
-table=Cucumber::Ast::Table.initialize([['a', 'It’s just an idea']])
+raw = %{
+             | Heading                                 | Value                             |
+             | What they want out of school experience | It’s just an idea                 |
+             | Degree stage                            | Final year                        |
+             | Degree subject                          | Bioscience                        |
+             | Teaching stage                          | I want to be a teacher            |
+             | Teaching subject                        | First choice: Biology             |
+             | Teaching subject                        | Second choice: Biology            |
+}
+
+table=Cucumber::MultilineArgument::DataTable.from(raw)
+
 table.hashes.each do |row|
-  puts row['Value']
-  nodetest.has_css?('dd', text: /#{row['Value']}/i)
+  node.has_css?('dd', text: /#{row['Value']}/i)
 end
